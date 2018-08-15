@@ -109,7 +109,7 @@ function read(a)
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     document.getElementById("result").innerHTML=html;
     */
-    window.open(a);
+    window.location=a;
 }   
 
 function isCanvasSupported(){
