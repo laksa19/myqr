@@ -8,6 +8,7 @@
   </head>
   <body>
     <video id="preview"></video>
+    <div id="result"></div>
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
       scanner.addListener('scan', function (content) {
@@ -22,6 +23,7 @@
       }).catch(function (e) {
         console.error(e);
       });
+      let result = scanner.scan({result.content: document.getElementById('result')} );
     </script>
   </body>
 </html>
