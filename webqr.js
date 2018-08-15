@@ -108,7 +108,8 @@ function read(a)
         html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     //document.getElementById("result").innerHTML=html;
-    window.open = a;
+    document.getElementById("result").innerHTML="OK";
+    window.open(a);
 }   
 
 function isCanvasSupported(){
