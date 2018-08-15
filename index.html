@@ -9,10 +9,9 @@
   <body>
     <video id="preview"></video>
     <script type="text/javascript">
-      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
       scanner.addListener('scan', function (content) {
         console.log(content);
-      let opts = {mirror: false};  
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 1) {
