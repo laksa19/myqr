@@ -9,14 +9,14 @@
   <body>
     <video id="preview"></video>
     <div id="result"></div>
+    <input type='text' id='yourInputFieldId' />
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
-
-       scanner.addListener('scan', function (content) {
-        document.getElementById("result").innerHTML = content; 
+        scanner.addListener('scan', function (content) {
+        document.getElementById("yourInputFieldId").value = content; // Pass the scanned content value to an input field
       });
       Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 1) {
+        if (cameras.length > 0) {
           scanner.start(cameras[1]);
         } else {
           console.error('No cameras found.');
