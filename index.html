@@ -11,8 +11,9 @@
     <div id="result"></div>
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
-      scanner.addListener('scan', function (content) {
-        console.log(content);
+
+       scanner.addListener('scan', function (content) {
+        document.getElementById("result").InnerHTML = content; // Pass the scanned content value to an input field
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 1) {
@@ -23,7 +24,6 @@
       }).catch(function (e) {
         console.error(e);
       });
-      let result = scanner.scan({result.content: document.getElementById('result')} );
     </script>
   </body>
 </html>
