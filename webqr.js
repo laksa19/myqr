@@ -109,7 +109,7 @@ function read(a)
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     //document.getElementById("result").innerHTML=html;
     document.getElementById("result").innerHTML="- QR CODE OK -";
-    document.getElementById("rescan").display="block";
+    document.getElementById("rescan").style.display="block";
     window.open(a);
 }   
 
