@@ -13,7 +13,7 @@
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
 
        scanner.addListener('scan', function (content) {
-        document.getElementById("result").InnerHTML = content; // Pass the scanned content value to an input field
+        document.getElementById("result").innerHTML = content; 
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 1) {
