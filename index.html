@@ -1,52 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>QR Scanner Demo</title>
-</head>
-<body>
-<style>
-    canvas {
-        display: none;
-    }
-    hr {
-        margin-top: 32px;
-    }
-    input[type="file"] {
-        display: block;
-        margin-bottom: 16px;
-    }
-    div {
-        margin-bottom: 16px;
-    }
-</style>
-<h1>Scan from WebCam:</h1>
-<div>
-    <video muted autoplay playsinline id="qr-video"></video>
-    <canvas id="debug-canvas"></canvas>
-</div>
-<div>
-    <input type="checkbox" id="debug-checkbox">
-    <span>Show debug image</span>
-</div>
-<b>Detected QR code: </b>
-<span id="cam-qr-result">None</span>
-<hr>
-
-<h1>Scan from File:</h1>
-<input type="file" id="file-selector">
-<b>Detected QR code: </b>
-<span id="file-qr-result">None</span>
-
-<script>
-    // ####### Web Cam Scanning #######
-
-    const scanner = new QrScanner(video, result => setResult(camQrResult, result));
-    scanner.start();
-    const fileQrResult = document.getElementById('file-qr-result');
-
-</script>
-<script src="qr-scanner.min.js"></script>
-</body>
+<html>
+  <head>
+      <title>Instascan</title>
+      <meta http-equiv="cache-control" content="no-cache" /><
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="instascan.min.js"></script>
+  </head>
+  <body>
+    <video id="preview"></video>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+  </body>
 </html>
