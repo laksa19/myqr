@@ -108,7 +108,8 @@ function read(a)
         html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     //document.getElementById("result").innerHTML=html;
-    document.getElementById("result").innerHTML="OK";
+    document.getElementById("result").innerHTML="- QR CODE OK -";
+    document.getElementById("rescan").display="block";
     window.open(a);
 }   
 
