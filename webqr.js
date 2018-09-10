@@ -109,6 +109,7 @@ function read(a)
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     document.getElementById("result").innerHTML=html;
     */
+    //change to auto open url
     window.location=a;
 }   
 
