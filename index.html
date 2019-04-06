@@ -86,7 +86,7 @@
               <div class="btn" id="reload" onclick="location.reload();">Reload Camera</div>
             </div>
             <div style="display: table-cell; padding:3px;">
-              <div class="btn" onclick="document.location = 'googlechrome://navigate?url=https://laksa19.github.io/myqr/';">Open in Chrome</div>
+              <div class="btn" onclick="openInChrome('https://laksa19.github.io/myqr/');">Open in Chrome</div>
               <!--<div class="btn" onclick="openInChrome();">Open in Chrome</div>-->
             </div>
           </div>
@@ -98,7 +98,7 @@
 <canvas style="display:none;" id="qr-canvas" width="800" height="600"></canvas>
 <script type="text/javascript">load();</script>
 <script>
-  function openInChrome(){
+  /*function openInChrome(){
   String url = "https://laksa19.github.io/myqr/";
     try {
         Intent i = new Intent("android.intent.action.MAIN");
@@ -110,6 +110,9 @@
     catch(ActivityNotFoundException e) {
         // Chrome is probably not installed
     }
+  }*/
+  function openInChrome(url) {
+  chrome.runtime.sendMessage({action: "openURL", url: url});
   }
  </script>
 </body>
