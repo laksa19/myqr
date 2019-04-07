@@ -31,6 +31,51 @@
       text-decoration: none;
       color:#20a8d8;
     }
+    @font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?14907215');
+      src: url('./font/fontello.eot?14907215#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?14907215') format('woff'),
+           url('./font/fontello.ttf?14907215') format('truetype'),
+           url('./font/fontello.svg?14907215#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .icon
+    {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+     
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
   </style>
 <script type="text/javascript" src="llqrcode.js"></script>
 <script type="text/javascript" src="webqr.js"></script>
@@ -43,11 +88,11 @@
         <div style="display: table;">
           <div style="display: table-row;">
             <div style="display: table-cell; padding:3px;">
-              <div class="btn" id="reload" onclick="location.reload();">Reload Camera</div>
+              <div class="btn" id="reload" onclick="location.reload();"><i class="icon icon-arrows-cw">&#xe800;</i> Reload Camera</div>
             </div>
             <div style="display: table-cell; padding:3px;">
               <!-- <div class="btn" onclick="document.location = 'googlechrome://navigate?url=https://laksa19.github.io/myqr/';"></div> -->
-              <a class="btn" href="intent://laksa19.github.io/myqr#Intent;scheme=http;package=com.android.chrome;end"> Open in Chrome</a>
+              <a class="btn" href="intent://laksa19.github.io/myqr#Intent;scheme=http;package=com.android.chrome;end"><i class="icon icon-chrome-1">&#xf268;</i> Open in Chrome</a>
             </div>
           </div>
         </div>
