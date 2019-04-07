@@ -31,6 +31,10 @@
       text-decoration: none;
       color:#20a8d8;
     }
+    #menu{
+      position:absolute;
+      z-index:2;
+    }
   </style>
 <script type="text/javascript" src="llqrcode.js"></script>
 <script type="text/javascript" src="webqr.js"></script>
@@ -40,7 +44,7 @@
     <div id="main">
       <div id="mainbody">
         <div class="camera" id="outdiv"></div>
-        <div style="display: table;">
+        <div id="menu" style="display: table;">
           <div style="display: table-row;">
             <div style="display: table-cell; padding:3px;">
               <div class="btn" id="reload" onclick="location.reload();">Reload Camera</div>
